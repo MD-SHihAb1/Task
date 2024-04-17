@@ -2,6 +2,10 @@ import { NavLink } from "react-router-dom";
 import Header from "../Header/Header";
 import Started from "../Register/Started/Started";
 import Apertment from "../../Apertment/Apertment";
+import Swiper from "../../Swiper/MySwiper";
+import MySwiper from "../../Swiper/MySwiper";
+import Animate from "../../Animate/Animate";
+
 
 
 const Navbar = () => {
@@ -25,7 +29,7 @@ const Navbar = () => {
                                         <li><a>Item 3</a></li>
                                     </ul>
                                     </div>
-                                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                                    <a className="btn btn-ghost text-xl">UrbHome</a>
                             </div>
                             <div className="navbar-center hidden lg:flex">
                                     <ul className="menu menu-horizontal px-1">
@@ -69,9 +73,11 @@ const Navbar = () => {
                             <br />
                             <br />
                             <br />
+                            <Animate></Animate>
                             <br />
                             <br />
                             <br />
+                            <MySwiper></MySwiper>
                             <br />
                             <br />
                             <br />

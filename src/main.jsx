@@ -18,6 +18,8 @@ import AuthProvider from './Component/Provaider/AuthProvider.jsx';
 import Home from './Component/Home/Home.jsx';
 import { Toaster } from 'react-hot-toast';  // Import Toaster from react-hot-toast
 import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
+import HouseDetails from './HouseDEtails/HouseDetails.jsx';
+import Leaflet from './Leaflet/Leaflet.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,15 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home></Home>
+      },
+      {
+        path: '/house/:id',
+        element:<HouseDetails></HouseDetails>,
+        loader: () => fetch('/public/Details.json')
+      },
+      {
+        path: "/house/map",
+        element:<Leaflet></Leaflet>
       }
     ]
   },
