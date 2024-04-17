@@ -16,8 +16,18 @@ const Apertment = () => {
 
 
     return (
-        <div>
-            <h1>hiiii{apertment.length}</h1>
+        <div className="font-poppins">
+           <div className="my-32">
+           <h1 className="text-6xl text-center">Charming Family Home for Sale</h1>
+           <br />
+           <br />
+           <p className="text-xl text-center">Discover this beautifully designed 3-bedroom home, offering spacious living areas, a modern kitchen, and a serene backyard garden.  Located in a sought-after neighborhood, it's the perfect place to call home. Don't miss this opportunity</p>
+           </div>
+           <br />
+           <br />
+           <br />
+           <br />
+            <br />
             <div className="grid grid-cols-2 gap-16">
                 {
                     apertment.slice(0, dataLength).map(apertment => <House key={Apertment.id} appertment={apertment}></House>)

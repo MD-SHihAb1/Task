@@ -8,8 +8,8 @@ const House = ({appertment}) => {
     const {img, details, sq_feet, hospital_distance, school_distance, supershop_distance, location, price, id, available} = appertment;
 
     return (
-        <div>
-           <div className="card lg:card-side bg-base-100 shadow-xl font-poppins">
+        <div className=" ">
+           <div className="card lg:card-side bg-base-100 shadow-xl font-poppins grid grid-cols-2 mx-16 my-16">
                  <figure><img src={img} alt="Album"/></figure>
                         <div className="card-body">
                             <h2 className="card-title">$ {price} USD</h2>

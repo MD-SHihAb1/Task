@@ -16,10 +16,12 @@ import Started from './Component/Register/Started/Started.jsx';
 import Header from './Component/Header/Header.jsx';
 import AuthProvider from './Component/Provaider/AuthProvider.jsx';
 import Home from './Component/Home/Home.jsx';
-import { Toaster } from 'react-hot-toast';  // Import Toaster from react-hot-toast
+import { Toaster } from 'react-hot-toast';  
 import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
 import HouseDetails from './HouseDEtails/HouseDetails.jsx';
 import Leaflet from './Leaflet/Leaflet.jsx';
+import AllRoute from './AllRoute/AllRoute.jsx';
+import House from './House/House.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Navbar></Navbar>,
+        element: <AllRoute></AllRoute>
       },
       {
         path: "login",
@@ -52,14 +54,18 @@ const router = createBrowserRouter([
         element: <Header></Header>
       },
       {
-        path: "home",
-        element: <Home></Home>
-      },
-      {
         path: '/house/:id',
         element:<HouseDetails></HouseDetails>,
         loader: () => fetch('/public/Details.json')
       },
+      {
+        path: '/',
+        element: <AllRoute></AllRoute>
+      },
+      {
+        path:'/house',
+        element:<House></House>
+      }
     
     ]
   },

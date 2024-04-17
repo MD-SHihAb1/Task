@@ -9,6 +9,9 @@ import { LiaSitemapSolid } from "react-icons/lia";
 import { FaRegSquare } from "react-icons/fa";
 import { GiWoodenFence } from "react-icons/gi";
 import Leaflet from "../Leaflet/Leaflet";
+import Video36 from "../Video350/Video360";
+import Header from "../Component/Header/Header";
+import Home from "../Component/Home/Home";
 
 
 
@@ -22,6 +25,7 @@ const HouseDetails = () => {
 
     return (
         <div className="font-poppins">
+            
 
 
 
@@ -530,7 +534,18 @@ const HouseDetails = () => {
 
             <br />
             <br />
+            <Video36></Video36>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            
             <Leaflet></Leaflet>
+
      
           
 
