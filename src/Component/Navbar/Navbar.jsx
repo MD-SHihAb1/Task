@@ -1,14 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Header from "../Header/Header";
 import Started from "../Register/Started/Started";
 import Apertment from "../../Apertment/Apertment";
-import Swiper from "../../Swiper/MySwiper";
+
 import MySwiper from "../../Swiper/MySwiper";
 import Animate from "../../Animate/Animate";
+import { useContext } from "react";
+import { AuthContext } from "../Provaider/AuthProvider";
+import auth from "../../Firebase/firebase.config";
 
 
 
 const Navbar = () => {
+
+
+        const {user, logOut } = useContext(AuthContext);
+
+
+    const handleLogOut = () =>{
+        logOut(auth)
+        .then(() => console.log('user logged Out Successfully'))
+        .catch(error => console.error(error))
+    }
+    
+      
+
+
     return (
         <div>
                 <div className="navbar bg-base-100">
@@ -48,6 +65,17 @@ const Navbar = () => {
                             </div>
                             <div className="navbar-end">
                                 <a className="btn">Button</a>
+                            </div>
+                            <div className="navbar-end">
+                                {
+                                    user ? <>
+                                    <span> {user.email} </span>
+                                    <a onClick={handleLogOut} className="btn">Sing out</a>
+                                    </>
+                                    :
+                                    ""
+                                }
+                                <a className="btn">ssss</a>
                             </div>
                             </div>
                            
