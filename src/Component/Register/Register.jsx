@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provaider/AuthProvider";
 import { Result } from "postcss";
 import toast from "react-hot-toast";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
 
 const Register = () => {
 
@@ -14,6 +16,9 @@ const Register = () => {
 
 
     const [registerError, setegisterError] = useState('');
+
+
+    const [showPassword, setShowPassword] = useState(false);
     
 
     const handleRegister = (e) => {
@@ -25,6 +30,23 @@ const Register = () => {
 
 
         setegisterError('');
+
+        if(password.length < 6){
+            setegisterError('Password should be at least 6 characters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)){
+            setegisterError('your password mast be uper characters')
+            return;
+        }
+        if(password.length < 6){
+            setegisterError('Password should be at least 6 characters or longer');
+            return;
+        }
+        else if (!/^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/.test(password)){
+            setegisterError('Password should be a Uniq Character')
+            return;
+        }
 
 
         createUser(email, password)
@@ -64,7 +86,25 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                          <div className="relative">
+                          <div>
+                            <input 
+                            type={ showPassword ? "text" : "password" } name="password" 
+                            placeholder="Password"
+                            className="input input-bordered" 
+                            required />  
+                            </div>
+                            <div className="">
+                            <span className="absolute mx-56 -mt-9" onClick={ () => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <IoMdEyeOff className="text-2xl"></IoMdEyeOff> : <IoMdEye className="text-2xl "></IoMdEye>
+                                }
+                                
+
+                            </span>
+                            </div>
+                          </div>
+
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

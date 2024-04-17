@@ -21,12 +21,12 @@ const HouseDetails = () => {
     console.log(appert);
 
     return (
-        <div>
+        <div className="font-poppins">
 
 
 
            
-            <h2>job details of :{appert.price}</h2>
+            <h2 className="text-6xl text-center my-20 animate__animated animate__flipInX">House Details</h2>
 
             <div className="card lg:card-side bg-base-100 ">
                 <figure><img className="w-3/6" src={appert.img} alt="Album"/></figure>

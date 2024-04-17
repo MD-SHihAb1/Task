@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Component/Provaider/AuthProvider";
 import toast from "react-hot-toast";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
 
 
 const Login = () => {
@@ -9,6 +11,8 @@ const Login = () => {
     const {singINUser, signWithGoogle} = useContext(AuthContext);
 
     const navigate = useNavigate();
+
+    const [showPassword, setShowPassword] = useState(false);
 
 
 
@@ -64,8 +68,28 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <label className="label">
+                            <input type={ showPassword ? "text" : "password" } name="password" placeholder="password" className="input input-bordered" required />
+                            <span className="absolute mx-56 my-12" onClick={ () => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <IoMdEyeOff className="text-2xl"></IoMdEyeOff> :  <IoMdEye className="text-2xl "></IoMdEye>
+                                }
+                                   
+
+                               
+                                
+
+                            </span>
+
+                            <br />
+                            <div className="gap-2 flex">
+                            <input type="checkbox" name="" id="terms" />
+                            <div>
+                            <label className="text-sm" htmlFor="terms">Accept Our Terms and Condition</label>
+                            </div>
+                            </div>
+                          <br />
+                    
+                            <label className="label justify-end">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>

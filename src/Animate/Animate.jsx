@@ -1,6 +1,11 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
+import 'animate.css';
+
+
+
+
 const Animate = () => {
     useEffect(() => {
         AOS.init({duration: "1000"})
@@ -9,7 +14,8 @@ const Animate = () => {
         <div>
             <div className='font-poppins'>
                 <div>
-                    <h1 className='text-6xl text-center '>Discover Your Dream Home with Us</h1>
+                    <h1 className='text-6xl text-center  animate__animated animate__flipInX '>Discover Your Dream Home with Us</h1>
+                    
                     <br />
                     <br />
                     <p className='text-center text-xl'>Explore a curated selection of houses,  apartments, and more. <br /> Whether you're looking to buy or rent, we have the perfect property to fit your lifestyle. <br /> Start your search today</p>
