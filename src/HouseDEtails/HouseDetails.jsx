@@ -530,6 +530,7 @@ const HouseDetails = () => {
 
             <br />
             <br />
+            <Leaflet></Leaflet>
      
           
 

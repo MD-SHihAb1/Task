@@ -60,10 +60,7 @@ const router = createBrowserRouter([
         element:<HouseDetails></HouseDetails>,
         loader: () => fetch('/public/Details.json')
       },
-      {
-        path: "/house/map",
-        element:<Leaflet></Leaflet>
-      }
+    
     ]
   },
 ]);
