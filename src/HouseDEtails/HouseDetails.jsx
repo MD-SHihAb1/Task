@@ -12,6 +12,7 @@ import Leaflet from "../Leaflet/Leaflet";
 import Video36 from "../Video350/Video360";
 import Header from "../Component/Header/Header";
 import Home from "../Component/Home/Home";
+import Review from "../Review/Review";
 
 
 
@@ -545,6 +546,26 @@ const HouseDetails = () => {
             
             
             <Leaflet></Leaflet>
+            <br />
+            <br />
+            <br />
+            <br />
+           
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          
+         
+           
+            
 
      
           

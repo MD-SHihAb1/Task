@@ -22,6 +22,9 @@ import HouseDetails from './HouseDEtails/HouseDetails.jsx';
 import Leaflet from './Leaflet/Leaflet.jsx';
 import AllRoute from './AllRoute/AllRoute.jsx';
 import House from './House/House.jsx';
+import Order from './Order/Order.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import Hmain from './Hmain/Hmain.jsx';
 
 const router = createBrowserRouter([
   {
@@ -64,7 +67,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/house',
-        element:<House></House>
+        element:<PrivateRoute><Hmain></Hmain></PrivateRoute>,
+      },
+      {
+        path:'/order',
+        element:<PrivateRoute><Order></Order></PrivateRoute>
       }
     
     ]
