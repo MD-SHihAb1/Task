@@ -14,13 +14,16 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
+    
+
 
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+       
+        console.log(email, password,);
 
         singINUser(email, password)
         .then( result =>{
@@ -81,12 +84,7 @@ const Login = () => {
                             </span>
 
                             <br />
-                            <div className="gap-2 flex">
-                            <input type="checkbox" name="" id="terms" />
-                            <div>
-                            <label className="text-sm" htmlFor="terms">Accept Our Terms and Condition</label>
-                            </div>
-                            </div>
+                         
                           <br />
                     
                             <label className="label justify-end">

@@ -19,6 +19,8 @@ const Register = () => {
 
 
     const [showPassword, setShowPassword] = useState(false);
+
+    
     
 
     const handleRegister = (e) => {
@@ -26,7 +28,8 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password, name);
+        const accepted = e.target.terms.checked;
+        console.log(email, password, name, accepted);
 
 
         setegisterError('');
@@ -45,6 +48,11 @@ const Register = () => {
         }
         else if (!/^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/.test(password)){
             setegisterError('Password should be a Uniq Character')
+            return;
+        }
+
+        else if(!accepted){
+            setegisterError('Please accept our terms and condition');
             return;
         }
 
@@ -112,6 +120,12 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary">Register</button>
                         </div>
+                        <div className="gap-2 flex my-6">
+                            <input type="checkbox" name="" id="terms" />
+                            <div>
+                            <label className="text-sm" htmlFor="terms">Accept Our Terms and Condition</label>
+                            </div>
+                            </div>
                     </form>
                     {
                         registerError && <p className="text-red-600">{registerError}</p>
