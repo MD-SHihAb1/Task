@@ -2,8 +2,8 @@
 
 const Order = () => {
     return (
-        <div>
-            <h1 className="text-4xl text-center">Order</h1>
+        <div className="my-16">
+            <h1 className="text-4xl text-center">Order:</h1>
         </div>
     );
 };
